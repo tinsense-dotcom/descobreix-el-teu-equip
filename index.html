@@ -86,18 +86,71 @@
         </div>
 
     </div>
+    
+    <div id="pantallaFinal" style="display:none;">
 
-    <script>
+    <div class="card">
 
-        function descobrirEquip() {
+        <h1>🎉</h1>
 
-            document.getElementById("pantallaInicial").style.display = "none";
+        <h2>Enhorabona!</h2>
 
-            document.getElementById("pantallaCarrega").style.display = "block";
+        <br>
+
+        <h1 style="color:green;">
+            💚 EQUIP VERD
+        </h1>
+
+        <p>
+            Aquesta és només una prova.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+function descobrirEquip(){
+
+    document.getElementById("pantallaInicial").style.display="none";
+
+    document.getElementById("pantallaCarrega").style.display="block";
+
+    const textos=[
+        "Verificant participant...",
+        "Analitzant dades...",
+        "Equilibrant equips...",
+        "Preparant sorpresa..."
+    ];
+
+    let i=0;
+
+    const interval=setInterval(function(){
+
+        document.getElementById("loadingText").innerHTML=textos[i];
+
+        i++;
+
+        if(i>=textos.length){
+
+            clearInterval(interval);
 
         }
 
-    </script>
+    },1000);
+
+    setTimeout(function(){
+
+        document.getElementById("pantallaCarrega").style.display="none";
+
+        document.getElementById("pantallaFinal").style.display="block";
+
+    },4000);
+
+}
+
+</script>
 
 </body>
 
