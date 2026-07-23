@@ -91,25 +91,46 @@
 
     <div class="card">
 
-        <h1>🎉</h1>
+    <h1>🎉</h1>
 
-        <h2>Enhorabona!</h2>
+    <h2 id="titolFinal">
+        Enhorabona!
+    </h2>
 
-        <br>
+    <br>
 
-        <h1 style="color:green;">
-            💚 EQUIP VERD
-        </h1>
+    <h1 id="equipFinal">
+    </h1>
 
-        <p>
-            Aquesta és només una prova.
-        </p>
+    <p id="missatgeFinal">
+    </p>
 
-    </div>
+</div>
 
 </div>
 
 <script>
+
+const equipVerd = [
+"gerard","civil",
+"monica","gilabert",
+"tania","insense",
+"alex","nuevo"
+];
+
+const equipVermell = [
+"xavi","caneque","cañeque",
+"natalia","nat",
+"sheila",
+"sonia","sònia","garcia"
+];
+
+const equipTaronja = [
+"ceci","cruciani",
+"mar","pamia",
+"barbara","bàrbara","adell",
+"alba","vilatersana"
+];
 
 function descobrirEquip(){
 
@@ -144,6 +165,52 @@ function descobrirEquip(){
 
         document.getElementById("pantallaCarrega").style.display="none";
 
+    const nom = document
+.getElementById("nom")
+.value
+.toLowerCase()
+.normalize("NFD")
+.replace(/[\u0300-\u036f]/g,"");
+
+let color = "black";
+let equip = "";
+let missatge = "";
+
+if(equipVerd.some(x => nom.includes(x))){
+
+    color="green";
+    equip="💚 EQUIP VERD";
+
+}
+
+else if(equipVermell.some(x => nom.includes(x))){
+
+    color="red";
+    equip="❤️ EQUIP VERMELL";
+
+}
+
+else if(equipTaronja.some(x => nom.includes(x))){
+
+    color="orange";
+    equip="🧡 EQUIP TARONJA";
+
+}
+
+else{
+
+    equip="❓ NOM NO TROBAT";
+
+    missatge="Comprova que hagis escrit el teu nom correctament.";
+
+}
+
+document.getElementById("equipFinal").innerHTML=equip;
+
+document.getElementById("equipFinal").style.color=color;
+
+document.getElementById("missatgeFinal").innerHTML=missatge; 
+        
         document.getElementById("pantallaFinal").style.display="block";
 
     },4000);
