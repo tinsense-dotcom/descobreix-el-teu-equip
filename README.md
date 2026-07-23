@@ -46,7 +46,7 @@ button{
 
 <body>
 
-<div class="card">
+<div class="card" id="pantallaInicial">
 
 <h1>🎁 Descobreix el teu equip</h1>
 
@@ -60,7 +60,7 @@ button{
 
 </div>
 
-<div id="loading" style="display:none;">
+<div id="pantallaCarrega" style="display:none;">
 
     <div class="card">
 
@@ -83,9 +83,9 @@ button{
 
 function descobrirEquip(){
 
-    document.querySelector(".card").style.display="none";
+    document.getElementById("pantallaInicial").style.display="none";
 
-    document.getElementById("loading").style.display="block";
+    document.getElementById("pantallaCarrega").style.display="block";
 
 }
 
