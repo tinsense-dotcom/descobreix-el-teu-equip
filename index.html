@@ -176,42 +176,46 @@ let color = "black";
 let equip = "";
 let missatge = "";
 
-if(equipVerd.some(x => nom.includes(x))){
+if (equipVerd.some(x => nom.includes(x))) {
 
-    color="green";
-    equip="💚 EQUIP VERD";
+    color = "green";
+    equip = "💚 EQUIP VERD";
+    missatge = "Ara busca la resta dels membres del teu equip i prepara't per començar!";
+
+}
+else if (equipVermell.some(x => nom.includes(x))) {
+
+    color = "red";
+    equip = "❤️ EQUIP VERMELL";
+    missatge = "Ara busca la resta dels membres del teu equip i prepara't per començar!";
+
+}
+else if (equipTaronja.some(x => nom.includes(x))) {
+
+    color = "orange";
+    equip = "🧡 EQUIP TARONJA";
+    missatge = "Ara busca la resta dels membres del teu equip i prepara't per començar!";
+
+}
+else {
+
+    color = "black";
+    equip = "❓ NOM NO TROBAT";
+    missatge = "Comprova que hagis escrit el teu nom correctament.";
 
 }
 
-else if(equipVermell.some(x => nom.includes(x))){
+document.getElementById("equipFinal").innerHTML = equip;
 
-    color="red";
-    equip="❤️ EQUIP VERMELL";
+document.getElementById("equipFinal").style.color = color;
 
-}
+document.getElementById("missatgeFinal").innerHTML = missatge;
 
-else if(equipTaronja.some(x => nom.includes(x))){
+// Amaguem la pantalla de càrrega
+document.getElementById("pantallaCarrega").style.display = "none";
 
-    color="orange";
-    equip="🧡 EQUIP TARONJA";
-
-}
-
-else{
-
-    equip="❓ NOM NO TROBAT";
-
-    missatge="Comprova que hagis escrit el teu nom correctament.";
-
-}
-
-document.getElementById("equipFinal").innerHTML=equip;
-
-document.getElementById("equipFinal").style.color=color;
-
-document.getElementById("missatgeFinal").innerHTML=missatge; 
-        
-        document.getElementById("pantallaFinal").style.display="block";
+// Mostrem la pantalla final
+document.getElementById("pantallaFinal").style.display = "block";
 
     },4000);
 
