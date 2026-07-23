@@ -55,57 +55,51 @@
 
 <body>
 
-    <div class="card" id="pantallaInicial">
+<div class="card" id="pantallaInicial">
 
-        <h1>🎁 Descobreix el teu equip</h1>
+    <h1>🎁 Descobreix el teu equip</h1>
 
-        <p>Escriu el teu nom.</p>
+    <p>Escriu el teu nom.</p>
 
-        <input id="nom" placeholder="Nom i cognom">
+    <input id="nom" placeholder="Nom i cognom">
 
-        <button onclick="descobrirEquip()">
-            Descobrir
-        </button>
+    <button onclick="descobrirEquip()">
+        Descobrir
+    </button>
 
-    </div>
+</div>
 
-    <div id="pantallaCarrega" style="display:none;">
 
-        <div class="card">
-
-            <h1>⏳</h1>
-
-            <h2>Preparant el teu equip...</h2>
-
-            <br>
-
-            <p id="loadingText">
-                Verificant participant...
-            </p>
-
-        </div>
-
-    </div>
-    
-    <div id="pantallaFinal" style="display:none;">
+<div id="pantallaCarrega" style="display:none;">
 
     <div class="card">
 
-    <h1>🎉</h1>
+        <h1>⏳</h1>
 
-    <h2 id="titolFinal">
-        Enhorabona!
-    </h2>
+        <h2>Preparant el teu equip...</h2>
 
-    <br>
+        <p id="loadingText">
+            Verificant participant...
+        </p>
 
-    <h1 id="equipFinal">
-    </h1>
-
-    <p id="missatgeFinal">
-    </p>
+    </div>
 
 </div>
+
+
+<div id="pantallaFinal" style="display:none;">
+
+    <div class="card">
+
+        <h1>🎉</h1>
+
+        <h2>Enhorabona!</h2>
+
+        <h1 id="equipFinal"></h1>
+
+        <p id="missatgeFinal"></p>
+
+    </div>
 
 </div>
 
