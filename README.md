@@ -52,11 +52,44 @@ button{
 
 <p>Escriu el teu nom.</p>
 
-<input placeholder="Nom i cognom">
+<input id="nom" placeholder="Nom i cognom">
 
-<button>Descobrir</button>
+<button onclick="descobrirEquip()">
+    Descobrir
+</button>
 
 </div>
+
+<div id="loading" style="display:none;">
+
+    <div class="card">
+
+        <h1>⏳</h1>
+
+        <h2>Preparant el teu equip...</h2>
+
+        <br>
+
+        <p id="loadingText">
+
+            Verificant participant...
+
+        </p>
+
+    </div>
+
+</div>
+<script>
+
+function descobrirEquip(){
+
+    document.querySelector(".card").style.display="none";
+
+    document.getElementById("loading").style.display="block";
+
+}
+
+</script>
 
 </body>
 </html>
