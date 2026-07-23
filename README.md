@@ -83,9 +83,7 @@ button{
 
 function descobrirEquip(){
 
-    document.getElementById("pantallaInicial").style.display="none";
-
-    document.getElementById("pantallaCarrega").style.display="block";
+    alert("FUNCIONA!");
 
 }
 
